@@ -1,0 +1,106 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "versedb/reading",
+	"version": "1.0.0",
+	"title": "VerseDB Recently Read",
+	"category": "versedb",
+	"icon": "book",
+	"description": "Display your latest recorded comic reads.",
+	"textdomain": "versedb",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"columns": {
+			"type": "number",
+			"default": 4
+		},
+		"limit": {
+			"type": "number",
+			"default": 12
+		},
+		"gap": {
+			"type": "number",
+			"default": 16
+		},
+		"coverSize": {
+			"type": "number",
+			"default": 80
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		},
+		"showCovers": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPublisher": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDates": {
+			"type": "boolean",
+			"default": false
+		},
+		"showNsfw": {
+			"type": "boolean",
+			"default": false
+		},
+		"mobileColumns": {
+			"type": "number",
+			"default": 2
+		},
+		"enableLinks": {
+			"type": "boolean",
+			"default": true
+		},
+		"customLayout": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutInitialized": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutVersion": {
+			"type": "number",
+			"default": 0
+		},
+		"headingStyle": {
+			"type": "object",
+			"default": {}
+		},
+		"creditStyle": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "versedb-display",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,326 @@
+.versedb-profile {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: var(--versedb-profile-gap, 1rem);
+	overflow-wrap: anywhere;
+
+	.versedb-profile__avatar {
+		flex: 0 0 auto;
+		width: var(--versedb-avatar-size, 80px);
+		height: var(--versedb-avatar-size, 80px);
+		border-radius: var(--versedb-avatar-radius, 50%);
+		object-fit: cover;
+	}
+
+	.versedb-profile__banner {
+		width: 100%;
+		max-height: 14rem;
+		object-fit: cover;
+		border-radius: 0.25rem;
+	}
+
+	.versedb-profile__details {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.versedb-profile__username {
+		margin: 0;
+		font-weight: 700;
+	}
+
+	.versedb-profile__bio {
+		margin: 0.5rem 0 0;
+		white-space: pre-line;
+	}
+}
+
+.versedb-display {
+	overflow-wrap: anywhere;
+
+	.versedb-display__title {
+		margin: 0 0 1rem;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.versedb-items {
+		display: grid;
+		gap: var(--versedb-gap, 16px);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.versedb-items--grid {
+		grid-template-columns: repeat(var(--versedb-columns, 4), minmax(0, 1fr));
+	}
+
+	.versedb-items--list {
+		grid-template-columns: 1fr;
+
+		.versedb-item {
+			display: flex;
+			align-items: flex-start;
+			gap: var(--versedb-gap, 16px);
+		}
+
+		.versedb-item__cover {
+			flex: 0 0 var(--versedb-cover-size, 80px);
+			width: var(--versedb-cover-size, 80px);
+		}
+	}
+
+	.versedb-item__cover {
+		display: block;
+		margin-bottom: 0.5rem;
+		overflow: hidden;
+		border-radius: 0.25rem;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 2 / 3;
+			object-fit: cover;
+		}
+	}
+
+	.versedb-item__cover--blurred img {
+		filter: blur(12px);
+		transform: scale(1.1);
+	}
+
+	.versedb-item__details {
+		min-width: 0;
+
+		p {
+			margin: 0.25rem 0 0;
+			font-size: 0.875em;
+		}
+
+		progress {
+			width: 100%;
+			accent-color: currentcolor;
+		}
+	}
+
+	.versedb-goal__progress {
+		width: 100%;
+		height: 1rem;
+		accent-color: currentcolor;
+	}
+
+	.versedb-stats {
+		display: grid;
+		grid-template-columns: repeat(var(--versedb-columns, 3), minmax(0, 1fr));
+		gap: var(--versedb-gap, 16px);
+		margin: 0;
+
+		dd {
+			margin: 0.25rem 0 0;
+			font-size: 1.75em;
+			font-weight: 700;
+		}
+	}
+
+	.versedb-calendar {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-rows: repeat(7, var(--versedb-cell-size, 12px));
+		grid-auto-columns: var(--versedb-cell-size, 12px);
+		gap: var(--versedb-cell-gap, 3px);
+		margin: 0;
+		padding: 0.5rem 0;
+		overflow-x: auto;
+		list-style: none;
+
+		&:focus-visible {
+			outline: 2px solid currentcolor;
+			outline-offset: 2px;
+		}
+	}
+
+	.versedb-calendar__day {
+		position: relative;
+		border: 1px solid currentcolor;
+		border-radius: 2px;
+		background: transparent;
+
+		&:focus {
+			outline: 2px solid currentcolor;
+			outline-offset: 1px;
+		}
+	}
+
+	.versedb-calendar__day--1 {
+		background: color-mix(in srgb, currentcolor 25%, transparent);
+	}
+
+	.versedb-calendar__day--2 {
+		background: color-mix(in srgb, currentcolor 50%, transparent);
+	}
+
+	.versedb-calendar__day--3 {
+		background: color-mix(in srgb, currentcolor 75%, transparent);
+	}
+
+	.versedb-calendar__day--4 {
+		background: currentcolor;
+	}
+
+	.versedb-calendar__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+}
+
+.versedb-credit {
+	flex-basis: 100%;
+	margin: 1rem 0 0;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+
+	.versedb-display .versedb-items--grid,
+	.versedb-display .versedb-stats {
+		grid-template-columns: repeat(var(--versedb-mobile-columns, 2), minmax(0, 1fr));
+	}
+}
+
+.versedb-field {
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+
+	a {
+		color: inherit;
+		font: inherit;
+		text-decoration: inherit;
+	}
+
+	progress {
+		width: 100%;
+		accent-color: currentcolor;
+	}
+
+	.versedb-field__label {
+		display: block;
+	}
+}
+
+.versedb-field--cover,
+.versedb-field--avatar,
+.versedb-field--banner {
+	width: var(--versedb-field-image-width, 100%);
+	max-width: 100%;
+	overflow: hidden;
+
+	a,
+	img {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+		height: var(--versedb-field-image-height, auto);
+		object-fit: var(--versedb-field-image-fit, cover);
+	}
+}
+
+.versedb-field__image--blurred {
+	filter: blur(12px);
+	transform: scale(1.1);
+}
+
+.versedb-template-item {
+	min-width: 0;
+
+	> :where(:not(style, svg) + :not(style, svg)) {
+		margin-block-start: 0.5rem;
+	}
+}
+
+.versedb-field__placeholder,
+.versedb-layout-editor__help {
+	font-size: 0.875rem;
+	opacity: 0.75;
+}
+
+.versedb-editor-items {
+	align-items: start;
+}
+
+.versedb-editor-item {
+	outline: 1px dashed currentcolor;
+	outline-offset: 4px;
+}
+
+.versedb-editor-items,
+.versedb-editor-single {
+	margin-bottom: 1rem;
+}
+
+.versedb-editor-item > .block-editor-inner-blocks > .block-editor-block-list__layout > :where(:not(style, svg) + :not(style, svg)) {
+	margin-block-start: 0.5rem;
+}
+
+
+:where(.versedb-field) {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+:where(.versedb-field--name, .versedb-field--series_name, .versedb-field--issue_title, .versedb-field--year) {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+:where(.versedb-field--username) {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+:where(.versedb-field--bio, .versedb-field--goal-summary) {
+	font-size: 16px;
+}
+
+:where(.versedb-field--read_count, .versedb-field--active_days, .versedb-field--current_streak, .versedb-field--longest_streak, .versedb-field--this_week, .versedb-field--this_month) {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.versedb-field strong {
+	font: inherit;
+}
+
+.versedb-field__label {
+	font-size: var(--versedb-label-font-size, 14px);
+	font-family: var(--versedb-label-font-family, inherit);
+	font-weight: var(--versedb-label-font-weight, 400);
+	font-style: var(--versedb-label-font-style, inherit);
+	line-height: var(--versedb-label-line-height, 1.5);
+	letter-spacing: var(--versedb-label-letter-spacing, inherit);
+	text-transform: var(--versedb-label-text-transform, inherit);
+	text-decoration: var(--versedb-label-text-decoration, inherit);
+	text-align: var(--versedb-label-text-align, inherit);
+	color: var(--versedb-label-color, inherit);
+}
+
+.versedb-credit a {
+	font: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}

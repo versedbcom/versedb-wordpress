@@ -1,0 +1,78 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "versedb/reading-calendar",
+	"version": "1.0.0",
+	"title": "VerseDB Reading Calendar",
+	"category": "versedb",
+	"icon": "book",
+	"description": "Display a yearly reading heatmap for a Pro account.",
+	"textdomain": "versedb",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"year": {
+			"type": "number",
+			"default": 0
+		},
+		"showYear": {
+			"type": "boolean",
+			"default": true
+		},
+		"cellSize": {
+			"type": "number",
+			"default": 12
+		},
+		"cellGap": {
+			"type": "number",
+			"default": 3
+		},
+		"customLayout": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutInitialized": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutVersion": {
+			"type": "number",
+			"default": 0
+		},
+		"headingStyle": {
+			"type": "object",
+			"default": {}
+		},
+		"creditStyle": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "versedb-display",
+	"render": "file:./render.php"
+}

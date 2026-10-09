@@ -1,0 +1,95 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "versedb/field",
+	"version": "1.0.0",
+	"title": "VerseDB Field",
+	"category": "versedb",
+	"icon": "editor-textcolor",
+	"description": "A movable, independently styled part of a VerseDB display.",
+	"textdomain": "versedb",
+	"ancestor": [
+		"versedb/profile",
+		"versedb/collection",
+		"versedb/wishlist",
+		"versedb/pull-list",
+		"versedb/reading",
+		"versedb/currently-reading",
+		"versedb/lists",
+		"versedb/list",
+		"versedb/reading-goal",
+		"versedb/reading-stats",
+		"versedb/reading-calendar"
+	],
+	"usesContext": [
+		"versedb/record",
+		"versedb/options",
+		"versedb/type",
+		"versedb/fields"
+	],
+	"attributes": {
+		"field": {
+			"type": "string",
+			"default": "name"
+		},
+		"textAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"imageWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"imageHeight": {
+			"type": "number",
+			"default": 0
+		},
+		"imageFit": {
+			"type": "string",
+			"default": "cover"
+		},
+		"labelStyle": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"text": true,
+			"background": true,
+			"gradients": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"lineHeight": true,
+				"letterSpacing": true,
+				"textTransform": true,
+				"textDecoration": true
+			}
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "versedb-display",
+	"render": "file:./render.php"
+}

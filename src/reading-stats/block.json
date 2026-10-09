@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "versedb/reading-stats",
+	"version": "1.0.0",
+	"title": "VerseDB Reading Stats",
+	"category": "versedb",
+	"icon": "book",
+	"description": "Display yearly reading statistics for a Pro account.",
+	"textdomain": "versedb",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"year": {
+			"type": "number",
+			"default": 0
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"gap": {
+			"type": "number",
+			"default": 16
+		},
+		"showReadCount": {
+			"type": "boolean",
+			"default": true
+		},
+		"showActiveDays": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCurrentStreak": {
+			"type": "boolean",
+			"default": true
+		},
+		"showLongestStreak": {
+			"type": "boolean",
+			"default": true
+		},
+		"showThisWeek": {
+			"type": "boolean",
+			"default": true
+		},
+		"showThisMonth": {
+			"type": "boolean",
+			"default": true
+		},
+		"mobileColumns": {
+			"type": "number",
+			"default": 2
+		},
+		"customLayout": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutInitialized": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutVersion": {
+			"type": "number",
+			"default": 0
+		},
+		"headingStyle": {
+			"type": "object",
+			"default": {}
+		},
+		"creditStyle": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "versedb-display",
+	"render": "file:./render.php"
+}
