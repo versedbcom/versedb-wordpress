@@ -1,0 +1,301 @@
+.versedb-settings {
+	max-width: 1120px;
+}
+
+.versedb-settings .versedb-brand {
+	padding: 16px 0 0;
+}
+
+.versedb-brand img {
+	display: block;
+	width: 180px;
+	max-width: 100%;
+	height: auto;
+}
+
+.versedb-settings .versedb-intro {
+	margin: 8px 0 24px;
+	color: #50575e;
+	font-size: 15px;
+}
+
+.versedb-settings-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 280px;
+	gap: 24px;
+	align-items: start;
+	margin-top: 20px;
+}
+
+.versedb-settings-main {
+	display: grid;
+	gap: 24px;
+	min-width: 0;
+}
+
+.versedb-settings-card {
+	padding: 24px;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.versedb-settings-card h2 {
+	margin: 0 0 16px;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.versedb-settings-card p,
+.versedb-settings-card li {
+	line-height: 1.65;
+}
+
+.versedb-card-heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.versedb-card-heading h2 {
+	margin: 0;
+}
+
+.versedb-status {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 20px;
+	background: #f0f0f1;
+	color: #50575e;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.versedb-status-connected {
+	background: #edfaef;
+	color: #175c2b;
+}
+
+.versedb-status-warning {
+	background: #fcf3d8;
+	color: #674a00;
+}
+
+.versedb-settings .versedb-account-name {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.versedb-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 20px;
+}
+
+.versedb-token-settings {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #dcdcde;
+}
+
+.versedb-token-settings summary {
+	width: fit-content;
+	cursor: pointer;
+	color: #2c3338;
+	font-weight: 600;
+	line-height: 1.6;
+}
+
+.versedb-token-settings summary:focus-visible {
+	outline: 2px solid var(--wp-admin-theme-color, #2271b1);
+	outline-offset: 4px;
+}
+
+.versedb-token-settings input.regular-text {
+	width: 100%;
+	max-width: 400px;
+	margin-top: 8px;
+}
+
+.versedb-settings-card .submit {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.versedb-settings-help ol {
+	margin: 0 0 24px;
+	padding-inline-start: 20px;
+}
+
+.versedb-settings-help li {
+	padding-inline-start: 4px;
+	margin-bottom: 12px;
+}
+
+.versedb-settings-help h3 {
+	font-size: 14px;
+}
+
+.versedb-disconnect-help {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #dcdcde;
+	color: #50575e;
+}
+
+.versedb-pro-card {
+	border-top: 3px solid #ff5722;
+}
+
+.versedb-pro-card ul {
+	list-style: disc;
+	padding-inline-start: 20px;
+	margin: 16px 0 20px;
+}
+
+.versedb-pro-card li {
+	margin-bottom: 8px;
+}
+
+@media (max-width: 960px) {
+
+	.versedb-settings-layout {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+
+	.versedb-settings-card {
+		padding: 20px;
+	}
+}
+
+.versedb-settings-sidebar {
+	display: grid;
+	gap: 24px;
+	min-width: 0;
+}
+
+.versedb-toggle {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	line-height: 1.6;
+}
+
+.versedb-toggle input[type="checkbox"] {
+	appearance: none;
+	flex: 0 0 36px;
+	width: 36px;
+	height: 20px;
+	margin: 2px 0 0;
+	border: 1px solid #646970;
+	border-radius: 12px;
+	background: #646970;
+	box-shadow: none;
+}
+
+.versedb-toggle input[type="checkbox"]::before {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 14px;
+	margin: 2px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.versedb-toggle input[type="checkbox"]:checked {
+	border-color: var(--wp-admin-theme-color, #2271b1);
+	background: var(--wp-admin-theme-color, #2271b1);
+}
+
+.versedb-toggle input[type="checkbox"]:checked::before {
+	transform: translateX(16px);
+}
+
+.versedb-toggle input[type="checkbox"]:focus-visible {
+	outline: 2px solid var(--wp-admin-theme-color, #2271b1);
+	outline-offset: 3px;
+}
+
+[dir="rtl"] .versedb-toggle input[type="checkbox"]:checked::before {
+	transform: translateX(-16px);
+}
+
+.versedb-block-tools:not([hidden]) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 20px 0;
+}
+
+.versedb-block-tools input {
+	min-width: 0;
+	max-width: 100%;
+}
+
+.versedb-block-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin: 20px 0;
+}
+
+.versedb-block-card {
+	padding: 18px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+}
+
+.versedb-block-card .versedb-toggle {
+	display: grid;
+	grid-template-columns: 1fr 36px;
+	gap: 14px;
+}
+
+.versedb-block-name {
+	grid-column: 1 / -1;
+	font-weight: 600;
+}
+
+.versedb-block-card p {
+	margin-bottom: 0;
+	color: #50575e;
+}
+
+.versedb-pro-label {
+	display: inline-block;
+	padding: 0 6px;
+	border-radius: 4px;
+	background: #fff0e9;
+	color: #953600;
+	font-size: 11px;
+}
+
+@media (max-width: 480px) {
+
+	.versedb-block-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.versedb-cache-details {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 12px 20px;
+}
+
+.versedb-cache-details dt {
+	font-weight: 600;
+}
+
+.versedb-cache-details dd {
+	margin: 0;
+	overflow-wrap: anywhere;
+}

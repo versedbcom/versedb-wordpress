@@ -1,0 +1,186 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "versedb/collection",
+	"version": "1.0.0",
+	"title": "VerseDB Collection",
+	"category": "versedb",
+	"icon": "book",
+	"description": "Display public copies from your comic collection.",
+	"textdomain": "versedb",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"columns": {
+			"type": "number",
+			"default": 4
+		},
+		"limit": {
+			"type": "number",
+			"default": 12
+		},
+		"gap": {
+			"type": "number",
+			"default": 16
+		},
+		"coverSize": {
+			"type": "number",
+			"default": 80
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		},
+		"showCovers": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPublisher": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDates": {
+			"type": "boolean",
+			"default": false
+		},
+		"showNsfw": {
+			"type": "boolean",
+			"default": false
+		},
+		"format": {
+			"type": "string",
+			"default": ""
+		},
+		"condition": {
+			"type": "string",
+			"default": ""
+		},
+		"graded": {
+			"type": "string",
+			"default": ""
+		},
+		"publisher_id": {
+			"type": "string",
+			"default": ""
+		},
+		"series_id": {
+			"type": "string",
+			"default": ""
+		},
+		"read_status": {
+			"type": "string",
+			"default": ""
+		},
+		"review": {
+			"type": "string",
+			"default": ""
+		},
+		"search": {
+			"type": "string",
+			"default": ""
+		},
+		"is_signed": {
+			"type": "string",
+			"default": ""
+		},
+		"grade_min": {
+			"type": "string",
+			"default": ""
+		},
+		"grade_max": {
+			"type": "string",
+			"default": ""
+		},
+		"grading_company": {
+			"type": "string",
+			"default": ""
+		},
+		"status": {
+			"type": "string",
+			"default": "owned"
+		},
+		"sort_by": {
+			"type": "string",
+			"default": "date_added"
+		},
+		"sort_order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"mobileColumns": {
+			"type": "number",
+			"default": 2
+		},
+		"for_sale": {
+			"type": "string",
+			"default": ""
+		},
+		"for_trade": {
+			"type": "string",
+			"default": ""
+		},
+		"genre_id": {
+			"type": "string",
+			"default": ""
+		},
+		"creator_id": {
+			"type": "string",
+			"default": ""
+		},
+		"character_id": {
+			"type": "string",
+			"default": ""
+		},
+		"enableLinks": {
+			"type": "boolean",
+			"default": true
+		},
+		"customLayout": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutInitialized": {
+			"type": "boolean",
+			"default": false
+		},
+		"layoutVersion": {
+			"type": "number",
+			"default": 0
+		},
+		"headingStyle": {
+			"type": "object",
+			"default": {}
+		},
+		"creditStyle": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "versedb-display",
+	"render": "file:./render.php"
+}

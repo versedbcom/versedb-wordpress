@@ -1,0 +1,43 @@
+{
+  "name": "versedb",
+  "version": "1.0.0",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=24.18.0",
+    "npm": ">=11.16.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build --blocks-manifest",
+    "start": "wp-scripts start --blocks-manifest",
+    "package": "npm run build && node -e \"require('node:fs').copyFileSync('LICENSE', 'build/license.txt')\" && wp-scripts plugin-zip",
+    "lint:js": "wp-scripts lint-js src includes/admin.js",
+    "lint:css": "wp-scripts lint-style 'src/**/*.scss' includes/admin.css",
+    "lint:php": "node scripts/check-php.cjs",
+    "test": "node scripts/test.mjs",
+    "check": "npm run lint:js && npm run lint:css && npm run lint:php && npm run build && npm test",
+    "dev:wordpress": "wp-playground-cli server --wp=6.8 --php=7.4 --mount=.:/wordpress/wp-content/plugins/versedb --login",
+    "preview": "npm run build && node scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "@wordpress/api-fetch": "7.56.0",
+    "@wordpress/block-editor": "18.0.0",
+    "@wordpress/blocks": "16.1.0",
+    "@wordpress/components": "41.0.0",
+    "@wordpress/data": "10.56.0",
+    "@wordpress/element": "8.8.0",
+    "@wordpress/i18n": "6.29.0",
+    "@wordpress/scripts": "36.0.0",
+    "@wordpress/server-side-render": "6.32.0",
+    "@wp-playground/cli": "3.1.56",
+    "php-parser": "3.7.0"
+  },
+  "overrides": {
+    "serialize-javascript": "7.1.2",
+    "js-yaml": "5.4.2",
+    "qs": "6.16.0",
+    "sockjs": {
+      "uuid": "11.1.1"
+    }
+  }
+}
