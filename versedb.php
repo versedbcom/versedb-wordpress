@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: VerseDB
- * Description: Display your VerseDB profile and comics with WordPress blocks.
- * Version: 1.0.0
+ * Plugin Name: VerseDB – Showcase Your Comic Book Collection
+ * Description: Display your comic book collection, pull list and reading progress from VerseDB with blocks.
+ * Version: 1.0.1
  * Requires at least: 6.8
  * Requires PHP: 7.4
  * Author: VerseDB

@@ -1,14 +1,14 @@
-=== VerseDB ===
+=== VerseDB – Showcase Your Comic Book Collection ===
 Contributors: versedb
-Tags: comics, collection, reading, blocks
+Tags: comics, comic books, collection, reading, blocks
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Display your VerseDB comics, profile and reading progress on your personal WordPress site with Gutenberg blocks.
+Display your comic book collection, pull list and reading progress from VerseDB on your WordPress site with blocks.
 
 == Description ==
 
@@ -31,38 +31,38 @@ when a token expires or the service is unavailable. Credit links are off by defa
 This plugin is for personal blogs. It does not provide shop, inventory, publisher,
 event, market-value or multi-account features.
 
-Support: hello@versedb.com.
-WordPress: https://versedb.com/support/apps/wordpress
-Source and build instructions: https://github.com/versedbcom/versedb-wordpress
+* Support: [hello@versedb.com](mailto:hello@versedb.com)
+* Documentation: [VerseDB for WordPress](https://versedb.com/support/apps/wordpress)
+* Source and build instructions: [GitHub](https://github.com/versedbcom/versedb-wordpress)
 
 = External services =
 
-This plugin connects to VerseDB at https://versedb.com. Account API requests begin
+This plugin connects to [VerseDB](https://versedb.com). Account API requests begin
 only when a site administrator connects an account.
 
 Connect to VerseDB sends the site name, return URL, a random state and PKCE
 challenge to the VerseDB consent screen. After approval, the WordPress server
 exchanges the authorization code and verifier for a read-only token. The server
-sends this token to the User API at https://versedb.com/api/v1 to retrieve the
+sends this token to the User API at `https://versedb.com/api/v1` to retrieve the
 member's profile, selected comic displays, public lists and reading progress.
 
 API requests run during connection validation and scheduled refreshes, not public
 page rendering. Readers' browsers load cover and profile images from the URLs
-provided by VerseDB, normally https://media.versedb.com. Following a comic or
+provided by VerseDB, normally `media.versedb.com`. Following a comic or
 profile link opens its VerseDB page. Native block scripts and styles are local.
 
 Public link embeds use WordPress's oEmbed requests and cache. WordPress sends the
-pasted public URL and requested dimensions to https://versedb.com/oembed without
+pasted public URL and requested dimensions to `https://versedb.com/oembed` without
 an account token. Visitors load the card in a VerseDB iframe. These embeds work
 independently of the account connection.
 
 Private account fields, purchase prices, notes, storage, loans and collection
 value are excluded from the display cache and public output. Encrypted credentials
 are stored server-side. Disconnect removes local credentials and data; revoke the
-token in VerseDB's My Apps page to remove its service access.
+token in VerseDB's [My Apps](https://versedb.com/my/apps) page to remove its service access.
 
-Terms: https://versedb.com/policy/terms
-Privacy: https://versedb.com/policy/privacy
+* [Terms of Service](https://versedb.com/policy/terms)
+* [Privacy Policy](https://versedb.com/policy/privacy)
 
 == Installation ==
 
@@ -72,7 +72,7 @@ Privacy: https://versedb.com/policy/privacy
 4. Search for VerseDB in the block inserter, add a display and publish your page.
 5. Allow WP-Cron to refresh new displays, then use Refresh preview in the editor.
 
-As a fallback, create a token in https://versedb.com/my/apps with read:public and
+As a fallback, create a token in [My Apps](https://versedb.com/my/apps) with read:public and
 read:showcase permissions. Paste it into the settings page and choose Test and
 save connection.
 
@@ -158,6 +158,10 @@ on VerseDB shows its expiry and lets you revoke it.
 4. Reading goal, progress and calendar displays.
 
 == Changelog ==
+
+= 1.0.1 =
+* Clearer plugin name.
+* Readme links are now clickable.
 
 = 1.0.0 =
 * Initial release.
